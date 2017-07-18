@@ -2772,8 +2772,8 @@ int main(WORD32 argc, CHAR *argv[])
                     peak_avg_max = peak_avg;
                 frm_cnt++;
 
-                printf("FrameNum: %4d TimeTaken(microsec): %6d AvgTime: %6d PeakAvgTimeMax: %6d Output: %2d NumBytes: %6d \n",
-                       frm_cnt, s_elapsed_time, u4_tot_cycles / frm_cnt, peak_avg_max, s_video_decode_op.u4_output_present, s_video_decode_op.u4_num_bytes_consumed);
+//                printf("FrameNum: %4d TimeTaken(microsec): %6d AvgTime: %6d PeakAvgTimeMax: %6d Output: %2d NumBytes: %6d \n",
+//                       frm_cnt, s_elapsed_time, u4_tot_cycles / frm_cnt, peak_avg_max, s_video_decode_op.u4_output_present, s_video_decode_op.u4_num_bytes_consumed);
 
             }
 #ifdef INTEL_CE5300
@@ -2782,8 +2782,8 @@ int main(WORD32 argc, CHAR *argv[])
             if(!(frm_cnt % (s_app_ctx.fps)))
             {
                 time_consumed = time_consumed / s_app_ctx.fps;
-                printf("Average decode time(micro sec) for the last second = %6d\n", time_consumed);
-                printf("Average bitrate(kb) for the last second = %6d\n", (bytes_consumed * 8) / 1024);
+//                printf("Average decode time(micro sec) for the last second = %6d\n", time_consumed);
+//                printf("Average bitrate(kb) for the last second = %6d\n", (bytes_consumed * 8) / 1024);
                 time_consumed = 0;
                 bytes_consumed = 0;
 
@@ -2962,9 +2962,9 @@ int main(WORD32 argc, CHAR *argv[])
         double avg = u4_tot_cycles / frm_cnt;
         double bytes_avg = total_bytes_comsumed / frm_cnt;
         double bitrate = (bytes_avg * 8 * s_app_ctx.fps) / 1000000;
-        printf("Bitrate @ %2d fps(mbps)          : %-6.2f\n", s_app_ctx.fps, bitrate);
-        printf("Average decode time(micro sec)  : %-6d\n", (WORD32)avg);
-        printf("Avg Peak decode time(%2d frames) : %-6d\n", PEAK_WINDOW_SIZE, (WORD32)peak_avg_max);
+//        printf("Bitrate @ %2d fps(mbps)          : %-6.2f\n", s_app_ctx.fps, bitrate);
+//        printf("Average decode time(micro sec)  : %-6d\n", (WORD32)avg);
+//        printf("Avg Peak decode time(%2d frames) : %-6d\n", PEAK_WINDOW_SIZE, (WORD32)peak_avg_max);
         avg = (u4_tot_cycles + u4_tot_fmt_cycles) * 1.0 / frm_cnt;
 
         if(0 == s_app_ctx.share_disp_buf)
